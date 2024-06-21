@@ -6,7 +6,7 @@ import { DatabaseModule, LocalDatabaseModule } from './module/database.module';
 import { DbHealthModule } from './module/dummy.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), LocalDatabaseModule, DbHealthModule],
+  imports: [ConfigModule.forRoot(), DatabaseModule, DbHealthModule],
   controllers: [AppController],
   providers: [AppService],
 })
