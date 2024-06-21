@@ -9,4 +9,16 @@ export class UserService {
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
   ) {}
+
+  async findUserByEmail(email: string): Promise<User | undefined> {
+    return this.userRepository.findOneBy({ email: email as string });
+  }
+
+  async findUserById(id: string): Promise<User | undefined> {
+    return this.userRepository.findOneById(id);
+  }
+
+  async saveUser(user: User): Promise<User | undefined> {
+    return this.userRepository.save(user);
+  }
 }
