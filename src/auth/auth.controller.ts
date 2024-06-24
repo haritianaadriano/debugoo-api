@@ -62,8 +62,7 @@ export class AuthController {
     type: UserApi,
   })
   @ApiOperation({
-    description:
-      'Create new user',
+    description: 'Create new user',
   })
   @ApiTags('auth')
   signUp(@Body() toCreate: SignupApi): Promise<UserApi> {
