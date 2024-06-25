@@ -38,7 +38,7 @@ export class AuthController {
       'Tells you who you are by giving token in Bearer Authentication',
     type: WhoamiApi,
   })
-  @ApiTags('auth')
+  @ApiTags('Auth')
   whoami(@CurrentUser() token): Promise<WhoamiApi> {
     return this.userMapper.toWhoamiApi(this.authService.retrieveUser(token));
   }
@@ -49,7 +49,7 @@ export class AuthController {
     description: 'Token provided',
     type: TokenApi,
   })
-  @ApiTags('auth')
+  @ApiTags('Auth')
   signIn(@Body() signIn: SignInApi): Promise<TokenApi> {
     return this.authService.signIn(signIn.email, signIn.password);
   }
@@ -62,10 +62,9 @@ export class AuthController {
     type: UserApi,
   })
   @ApiOperation({
-    description:
-      'Create new user',
+    description: 'Create new user',
   })
-  @ApiTags('auth')
+  @ApiTags('Auth')
   signUp(@Body() toCreate: SignupApi): Promise<UserApi> {
     const user = this.userMapper.signupApiToDomain(toCreate);
     const userToRest = this.userService.saveUser(user);
