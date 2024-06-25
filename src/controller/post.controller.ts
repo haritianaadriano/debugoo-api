@@ -6,6 +6,8 @@ import {
   Put,
   Query,
   UseGuards,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { AuthGuard } from '../auth/guards/auth.guards';
 import { PostService } from '../service/post.service';
@@ -29,6 +31,7 @@ export class PostController {
     isArray: true,
   })
   @ApiTags('Posting')
+  @UsePipes(new ValidationPipe())
   async findPosts(
     @Query() paginationQuery: PaginationQuery,
   ): Promise<PostApi[]> {
@@ -60,6 +63,7 @@ export class PostController {
     isArray: true,
   })
   @ApiTags('Posting')
+  @UsePipes(new ValidationPipe())
   async findUserPosts(
     @Param('user_id') userId: string,
     @Query() pagination: PaginationQuery,
