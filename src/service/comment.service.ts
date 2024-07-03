@@ -17,7 +17,7 @@ export class CommentService {
     private readonly postService: PostService,
   ) {}
 
-  async saveComment(
+  async saveComments(
     toCreatePost: CreateCommentApi[],
   ): Promise<Comment[] | undefined> {
     return this.commentRepository.save(

@@ -12,9 +12,6 @@ export class CommentApi {
   author: UserApi;
 
   @ApiProperty()
-  post_id: string;
-
-  @ApiProperty()
   creation_date: Date;
 }
 
