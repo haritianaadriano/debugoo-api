@@ -6,6 +6,8 @@ import { DatabaseModule, LocalDatabaseModule } from './module/database.module';
 import { DbHealthModule } from './module/dummy.module';
 import { AuthModule } from './auth/auth.module';
 import { PostModule } from './module/post.module';
+import { UserModule } from './module/user.module';
+import { CommentModule } from './module/comment.module';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { PostModule } from './module/post.module';
     DbHealthModule,
     AuthModule,
     PostModule,
+    UserModule,
+    CommentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -8,7 +8,7 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle('Personal Blog api')
+    .setTitle('Debugoo api')
     .setDescription('Simple project to mastering nest')
     .setVersion('1.0')
     .build();
